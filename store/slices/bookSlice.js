@@ -191,7 +191,21 @@ const booksSlice = createSlice({
     },
     setSearchKeyword: (state, action) => {
       state.searchKeyword = action.payload;
-    }
+    },
+    searchForBooks: (state, action) => {
+      state.searchResults = [];
+
+      const searchKeyword = state.searchKeyword.trim();
+
+      if (searchKeyword == null) return;
+
+      state.searchKeyword = searchKeyword;
+
+      state.searchResults = state.booksDatabase.filter(book => book.genreList.includes(searchKeyword));
+
+      state.searchResults = [...new Set(state.searchResults)];
+      console.log("searchForBooks success.");
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -272,6 +286,7 @@ export const {
   setSelectedBook,
   setSelectedChapter,
   setBookListingTitle,
-  setSearchKeyword
+  setSearchKeyword,
+  searchForBooks
 } = booksSlice.actions;
 export default booksSlice.reducer;

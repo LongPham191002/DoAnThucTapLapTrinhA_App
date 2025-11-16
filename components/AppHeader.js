@@ -284,10 +284,9 @@ const AppHeader = ({ hideLine }) => {
 
                 <View style={styles.rightSideContainer}>
                     <TouchableOpacity style={styles.button}
-                        // onPress={() => {
-                        //     setLeftIsVisible(false)
-                        //     setRightIsVisible(!right_isVisible)
-                        // }}
+                        onPress={() => {
+                            navigation.navigate("GenreListing")
+                        }}
                     >
                         <MaterialIcons name="menu" color={colors.white} size={30} />
                     </TouchableOpacity>

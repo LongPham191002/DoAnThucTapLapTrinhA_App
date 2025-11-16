@@ -139,6 +139,8 @@ const Cr_Update = () => {
     const language = selectedCreation?.language || null;
     const translator = selectedCreation?.translator || null;
 
+    if (selectedCreation == null) return;
+
     return (
         <View style={styles.container}>
             <CreateStoryHeader />
@@ -155,7 +157,7 @@ const Cr_Update = () => {
                             : progressStatus == "đang cập nhật" ? { color: colors.yellow }
                                 : { color: colors.red }}
                         >
-                            {progressStatus.toUpperCase()}
+                            {progressStatus?.toUpperCase()}
                         </Text>
                     </Text>
                     <Filigree2 customPosition={-70} />

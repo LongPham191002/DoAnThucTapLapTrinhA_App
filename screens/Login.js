@@ -1,16 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, Alert, KeyboardAvoidingView, Platform, } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+  TextInput,
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { colors, globalStyles } from "../components/GlobalStyle";
-import { useNavigation } from "@react-navigation/native";
-
-import { Filigree5_Bottom, Filigree2 } from "../components/decorations/Filigree";
-import { SidedButton_Left, SidedButton_Right, DecoButton, OrnateButton, } from "../components/decorations/DecoButton";
-
 import AppHeader from "../components/AppHeader";
 import AppFooter from "../components/AppFooter";
-import ScreenTitle from "../components/ScreenTitle";
 
+import { Filigree5_Bottom, Filigree2 } from "../components/decorations/Filigree";
+import {
+  SidedButton_Left,
+  SidedButton_Right,
+  DecoButton,
+  OrnateButton,
+} from "../components/decorations/DecoButton";
+import ScreenTitle from "../components/ScreenTitle";
+import { useNavigation } from "@react-navigation/native";
+
+// ✅ Redux
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, registerUser } from "../store/slices/accountSlice";
 
@@ -326,7 +341,7 @@ const SignUpComponent = ({ setIsLogin }) => {
 };
 
 // 🔹 MÀN LOGIN CHÍNH
-const LoginScreen = () => {
+const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
@@ -473,4 +488,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default Login;
