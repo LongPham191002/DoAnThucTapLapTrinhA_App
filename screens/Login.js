@@ -33,6 +33,8 @@ import { loginUser, registerUser } from "../store/slices/accountSlice";
 import * as WebBrowser from "expo-web-browser";
 import * as Google from "expo-auth-session/providers/google";
 import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
+
+// FILE FIREBASE Ở ../firebase
 import { auth } from "../config/firebaseConfig";
 
 WebBrowser.maybeCompleteAuthSession();
